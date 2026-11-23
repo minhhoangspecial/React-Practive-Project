@@ -1,0 +1,15 @@
+function Popup({ message }) {
+  return (
+    <>
+      <div className="popup">
+        <span>{message}</span>
+        <div className="popup_btns">
+          <button className="popup__btn">Confirm</button>
+          <button className="popup__btn popup__btn--cancel">Cancel</button>
+        </div>
+      </div>
+      <div className="backdrop"></div>
+    </>
+  );
+}
+export default Popup;

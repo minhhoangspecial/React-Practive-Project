@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-function Todo({ task, description }) {
-  function handleClick() {
+function Todo({ task }) {
+  function deleteHandler() {
+    console.log(task);
     setText("Deleted");
   }
   const [text, setText] = useState("Delete");
   return (
     <div className="todo-item">
       <h2>{task}</h2>
-      <p>{description}</p>
       <button
         onClick={() => {
-          handleClick();
+          deleteHandler();
         }}
       >
         {text}

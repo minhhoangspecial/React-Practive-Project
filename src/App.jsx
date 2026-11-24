@@ -5,21 +5,39 @@ import Popup from "./components/Popup";
 import { useState } from "react";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState({ name: "minh", count: 20 });
   const increment = () => {
-    setCounter(counter + 1);
+    setCounter(counter.count + 1);
   };
   const decrement = () => {
-    setCounter(counter - 1);
+    setCounter((user) => ({
+      ...user,
+      count: user.count - 1,
+    }));
   };
   const reset = () => {
-    setCounter(0);
+    setCounter({ name: "minh", count: 20 });
   };
 
   return (
     <div>
-      <h1>Counter: {counter}</h1>
-      <button onClick={increment}>Increment</button>
+      <h1>
+        Counter: {counter.name} {counter.count}
+      </h1>
+      <button
+        onClick={() => {
+          setCounter((user) => ({
+            ...user,
+            count: user.count + 1,
+          }));
+          setCounter((user) => ({
+            ...user,
+            count: user.count + 1,
+          }));
+        }}
+      >
+        Increment
+      </button>
       <button onClick={decrement}>Decrement</button>
       <button onClick={reset}>Reset</button>
     </div>

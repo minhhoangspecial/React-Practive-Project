@@ -1,9 +1,6 @@
-function Popup({ message }) {
+function Popup({ message, setPopupOpen }) {
   const buttonConfirmClick = () => {
     console.log("Confirm button clicked!");
-  };
-  const buttonCancelClick = () => {
-    console.log("Cancel button clicked!");
   };
   return (
     <>
@@ -15,7 +12,7 @@ function Popup({ message }) {
           </button>
           <button
             className="popup__btn popup__btn--cancel"
-            onClick={buttonCancelClick}
+            onClick={() => setPopupOpen(false)}
           >
             Cancel
           </button>

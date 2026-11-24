@@ -1,21 +1,8 @@
-import { useState } from "react";
-
-function Todo({ task }) {
-  function deleteHandler() {
-    console.log(task);
-    setText("Deleted");
-  }
-  const [text, setText] = useState("Delete");
+function Todo({ task, setPopupOpen }) {
   return (
     <div className="todo-item">
       <h2>{task}</h2>
-      <button
-        onClick={() => {
-          deleteHandler();
-        }}
-      >
-        {text}
-      </button>
+      <button onClick={() => setPopupOpen(true)}>Delete</button>
     </div>
   );
 }

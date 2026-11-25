@@ -18,7 +18,7 @@ function Popup({ message, setPopupOpen }) {
           </button>
         </div>
       </div>
-      <div className="backdrop"></div>
+      <div className="backdrop" onClick={() => setPopupOpen(false)}></div>
     </>
   );
 }
